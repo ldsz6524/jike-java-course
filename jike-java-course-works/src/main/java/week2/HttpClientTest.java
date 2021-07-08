@@ -10,7 +10,7 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 
 /**
- * @description:
+ * @description: HttpClient实现
  * @author:
  * @create:
  * @other:
@@ -18,16 +18,20 @@ import java.io.IOException;
 
 public class HttpClientTest {
 
+
     public static void main(String[] args) throws IOException {
+        HttpClientTest.getHttpClient();
+    }
+
+    public static void getHttpClient() throws IOException {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://localhost:8801");
         CloseableHttpResponse response = httpClient.execute(httpGet);
-        if(response.getStatusLine().getStatusCode()==200){
+        if(response.getStatusLine().getStatusCode()==200) {
             HttpEntity entity = response.getEntity();
-            String string = EntityUtils.toString(entity, "utf-8");
+            String string = EntityUtils.toString(entity, "UTF-8");
             System.out.println(string);
         }
-        //关闭资源
         response.close();
         httpClient.close();
     }

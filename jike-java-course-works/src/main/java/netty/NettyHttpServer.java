@@ -21,7 +21,7 @@ import io.netty.handler.logging.LoggingHandler;
 public class NettyHttpServer {
     public static void main(String[] args) throws InterruptedException {
 
-        int port = 8808;
+        int port = 8801;
 
         EventLoopGroup bossGroup = new NioEventLoopGroup(2);
         EventLoopGroup workerGroup = new NioEventLoopGroup(16);

@@ -36,11 +36,12 @@ public class HttpHandler extends ChannelInboundHandlerAdapter {
             FullHttpRequest fullRequest = (FullHttpRequest) msg;
             String uri = fullRequest.uri();
             //logger.info("接收到的请求url为{}", uri);
-            if (uri.contains("/test")) {
-                handlerTest(fullRequest, ctx, "hello,kimmking");
-            } else {
-                handlerTest(fullRequest, ctx, "hello,others");
-            }
+//            if (uri.contains("/test")) {
+//                handlerTest(fullRequest, ctx, "hello,kimmking");
+//            } else {
+//                handlerTest(fullRequest, ctx, "hello,others");
+//            }
+            handlerTest(fullRequest, ctx);
 
         } catch(Exception e) {
             e.printStackTrace();
@@ -49,15 +50,10 @@ public class HttpHandler extends ChannelInboundHandlerAdapter {
         }
     }
 
-    private void handlerTest(FullHttpRequest fullRequest, ChannelHandlerContext ctx, String body) {
+    private void handlerTest(FullHttpRequest fullRequest, ChannelHandlerContext ctx) {
         FullHttpResponse response = null;
         try {
-            String value = body; // 对接上次作业的httpclient或者okhttp请求另一个url的响应数据
-
-//            httpGet ...  http://localhost:8801
-//            返回的响应，"hello,nio";
-//            value = reponse....
-
+            String value = "hello, nio";
             response = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(value.getBytes("UTF-8")));
             response.headers().set("Content-Type", "application/json");
             response.headers().setInt("Content-Length", response.content().readableBytes());
