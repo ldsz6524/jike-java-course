@@ -2,7 +2,7 @@ package week3.nio02.src.main.java.io.github.kimmking.gateway.inbound;
 
 import week3.nio02.src.main.java.io.github.kimmking.gateway.filter.HeaderHttpRequestFilter;
 import week3.nio02.src.main.java.io.github.kimmking.gateway.filter.HttpRequestFilter;
-import io.github.kimmking.gateway.outbound.httpclient4.HttpOutboundHandler;
+import week3.nio02.src.main.java.io.github.kimmking.gateway.outbound.httpclient4.HttpOutboundHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.codec.http.FullHttpRequest;

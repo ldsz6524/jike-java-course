@@ -1,7 +1,7 @@
 package week3.nio02.src.main.java.io.github.kimmking.gateway;
 
 
-import io.github.kimmking.gateway.inbound.HttpInboundServer;
+import week3.nio02.src.main.java.io.github.kimmking.gateway.inbound.HttpInboundServer;
 
 import java.util.Arrays;
 
