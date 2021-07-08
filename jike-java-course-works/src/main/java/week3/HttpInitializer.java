@@ -1,4 +1,4 @@
-package week3.netty;
+package week3;
 
 /**
  * @description:
