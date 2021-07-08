@@ -1,4 +1,4 @@
-package week2.netty;
+package week3.netty;
 
 /**
  * @description:
@@ -34,7 +34,7 @@ public class HttpHandler extends ChannelInboundHandlerAdapter {
         try {
             //logger.info("channelRead流量接口请求开始，时间为{}", startTime);
             FullHttpRequest fullRequest = (FullHttpRequest) msg;
-            String uri = fullRequest.uri();
+//            String uri = fullRequest.uri();
             //logger.info("接收到的请求url为{}", uri);
 //            if (uri.contains("/test")) {
 //                handlerTest(fullRequest, ctx, "hello,kimmking");
