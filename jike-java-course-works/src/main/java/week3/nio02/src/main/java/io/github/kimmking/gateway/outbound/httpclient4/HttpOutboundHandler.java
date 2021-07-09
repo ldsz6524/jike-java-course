@@ -1,11 +1,6 @@
 package week3.nio02.src.main.java.io.github.kimmking.gateway.outbound.httpclient4;
 
 
-import week3.nio02.src.main.java.io.github.kimmking.gateway.filter.HeaderHttpResponseFilter;
-import week3.nio02.src.main.java.io.github.kimmking.gateway.filter.HttpRequestFilter;
-import week3.nio02.src.main.java.io.github.kimmking.gateway.filter.HttpResponseFilter;
-import week3.nio02.src.main.java.io.github.kimmking.gateway.router.HttpEndpointRouter;
-import week3.nio02.src.main.java.io.github.kimmking.gateway.router.RandomHttpEndpointRouter;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
@@ -21,11 +16,13 @@ import org.apache.http.impl.nio.client.HttpAsyncClients;
 import org.apache.http.impl.nio.reactor.IOReactorConfig;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
+import week3.nio02.src.main.java.io.github.kimmking.gateway.filter.HeaderHttpResponseFilter;
+import week3.nio02.src.main.java.io.github.kimmking.gateway.filter.HttpRequestFilter;
+import week3.nio02.src.main.java.io.github.kimmking.gateway.router.HttpEndpointRouter;
+import week3.nio02.src.main.java.io.github.kimmking.gateway.router.RandomHttpEndpointRouter;
 
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.*;
-import java.util.logging.Filter;
 import java.util.stream.Collectors;
 
 import static io.netty.handler.codec.http.HttpResponseStatus.NO_CONTENT;
