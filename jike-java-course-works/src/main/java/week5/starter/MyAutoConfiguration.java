@@ -16,10 +16,6 @@ import week5.starter.service.MyTemplate;
 
 import java.util.Arrays;
 
-/**
- * @author yangbiao
- * @date 2021/4/16
- */
 @Slf4j
 @Configuration
 @EnableConfigurationProperties(MyConfig.class)
@@ -27,12 +23,7 @@ import java.util.Arrays;
 @ConditionalOnProperty(prefix = "my", name = "enabled", havingValue = "true", matchIfMissing = true)
 public class MyAutoConfiguration {
 
-    /**
-     * 获取Student
-     *
-     * @param myConfig
-     * @return
-     */
+
     @Bean("student100")
     @ConditionalOnBean(MyConfig.class)
     public Student student(MyConfig myConfig) {
@@ -43,12 +34,7 @@ public class MyAutoConfiguration {
         return student;
     }
 
-    /**
-     * 获取Klass
-     *
-     * @param myConfig
-     * @return
-     */
+
     @Bean
     @ConditionalOnBean(Student.class)
     public Klass klass(MyConfig myConfig) {
@@ -59,23 +45,14 @@ public class MyAutoConfiguration {
         return klass;
     }
 
-    /**
-     * 获取School
-     *
-     * @return
-     */
+
     @Bean
     @ConditionalOnBean(Klass.class)
     public School school() {
         return new School();
     }
 
-    /**
-     * 注意因为需要对应的bean,所以需要先让其创建
-     *
-     * @param myConfig
-     * @return
-     */
+
     @Bean
     @ConditionalOnBean(School.class)
     public MyTemplate myTemplate(MyConfig myConfig) {

@@ -9,9 +9,8 @@ import javax.annotation.Resource;
 
 @Data
 public class School implements ISchool {
-    
-    // Resource 
-    @Autowired(required = true) //primary
+
+    @Autowired(required = true)
     Klass class1;
     
     @Resource(name = "student100")

@@ -6,10 +6,7 @@ import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * @author yangbiao
- * @date 2021/4/16
- */
+
 @Setter
 @Getter
 @ToString
